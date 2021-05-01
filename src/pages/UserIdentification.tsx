@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import {
   StyleSheet,
   View,
@@ -9,12 +10,14 @@ import {
   Platform,
   Keyboard,
   TouchableWithoutFeedback,
+  Alert,
 } from "react-native";
 import { Button } from "../components/Button";
 import colors from "../styles/colors";
 import fonts from "../styles/fonts";
 
 export function UserIdentification() {
+  const navigation = useNavigation
   const [name, setName] = useState("");
   const [isFilled, setIsFilled] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
@@ -31,6 +34,14 @@ export function UserIdentification() {
   function handleInputBlur() {
     setIsFocused(false);
     setIsFilled(!!name);
+  }
+
+  async function handleSubmit() {
+    if (!name) {
+      return Alert.alert('Ops', 'Me diz como chamar você 😥');
+    }
+
+
   }
   return (
     <SafeAreaView style={styles.container}>
