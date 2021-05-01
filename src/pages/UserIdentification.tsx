@@ -17,7 +17,7 @@ import colors from "../styles/colors";
 import fonts from "../styles/fonts";
 
 export function UserIdentification() {
-  const navigation = useNavigation
+  const navigation = useNavigation();
   const [name, setName] = useState("");
   const [isFilled, setIsFilled] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
@@ -40,7 +40,7 @@ export function UserIdentification() {
     if (!name) {
       return Alert.alert('Ops', 'Me diz como chamar você 😥');
     }
-
+    navigation.navigate('Confirmation');
 
   }
   return (
@@ -72,7 +72,7 @@ export function UserIdentification() {
               />
 
               <View style={styles.footer}>
-                <Button title="Confirmar" />
+                <Button title="Confirmar" onPress={handleSubmit} />
               </View>
             </View>
           </View>
