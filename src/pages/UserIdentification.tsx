@@ -40,7 +40,13 @@ export function UserIdentification() {
     if (!name) {
       return Alert.alert('Ops', 'Me diz como chamar você 😥');
     }
-    navigation.navigate('Confirmation');
+    navigation.navigate('Confirmation', {
+      title: 'Prontinho',
+      subtitle: 'Agora vamos começar a cuidar das suas plantinhas com muito cuidado',
+      buttonTitle: 'Começar',
+      icon: 'smile',
+      nextScreen: 'PlantSelect'
+    });
 
   }
   return (
