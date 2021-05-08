@@ -26,7 +26,7 @@ export function Confirmation() {
   const { title, subtitle, buttonTitle, icon, nextScreen } = routes.params as Params;
 
   function handleMoveOn() {
-    // navigation.navigate(nextScreen);
+    navigation.navigate(nextScreen);
   }
 
   return (
